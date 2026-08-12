@@ -12,9 +12,15 @@
 
 ---
 
+## 📸 Interface & Dashboard Showcase
+
+![TrustChain Digital Achievement Wallet Dashboard](docs/images/hero_dashboard.png)
+
+---
+
 ## 📖 Overview
 
-**TrustChain** replaces repeated certificate uploads with a **single, trusted digital achievement identity**. Designed as a MCA final-year showcase project and startup-grade architecture, TrustChain allows students and professionals to connect verified education degrees, certificates, GitHub project evidence, and work experience to a single identity (`TC-IN-2026-XXXXXXXX`). 
+**TrustChain** replaces repeated certificate uploads with a **single, trusted digital achievement identity**. Designed as an MCA final-year showcase project and startup-grade architecture, TrustChain allows students and professionals to connect verified education degrees, certificates, GitHub project evidence, and work experience to a single identity (`TC-IN-2026-XXXXXXXX`). 
 
 When applying for jobs, university programs, scholarships, or government schemes, candidates share a **Universal Verification Link or QR Code** for instant cryptographic proof.
 
@@ -33,30 +39,33 @@ When applying for jobs, university programs, scholarships, or government schemes
 
 ## ✨ Key Features & Innovation Highlights
 
-### 1. 👤 Student Achievement Wallet
+### 1. 👤 Student Achievement Wallet & Digital Identity
 - **Unique Digital Identity**: `TC-IN-2026-89421A` badge with QR code generator.
 - **Transparent Trust Score Engine**: Dynamic score (0–100) detailing exact point factors (+40 Inst, +20 Degree, +15 Certs, +15 GitHub Projects, +8 Skills, +2 Profile).
 - **Universal Verification Link**: Shareable route (`trustchain.app/u/TC-IN-2026-89421A`) accessible without login.
 - **Selective Disclosure Matrix**: Control granular visibility for GPA, phone, address, and repositories.
 
 ### 2. 🔐 Zero-Knowledge Proof (ZKP) Studio
+![TrustChain Zero-Knowledge Proof Studio](docs/images/zkp_privacy_studio.png)
 - Powered by **zk-SNARK (Groth16 over BN128 curve)**.
 - Prove statements (e.g., *"I hold an authentic MCA degree with CGPA >= 8.0"*) without exposing actual transcript marks or personal data.
 
-### 3. 🏛️ University Credential Issuer & AI OCR
+### 3. 🏛️ Cryptographic Signatures & Block Ledger Architecture
+![TrustChain Cryptographic Architecture](docs/images/crypto_architecture.png)
 - Cryptographic signing using **ECDSA P-256 keys** and **SHA-256** payload hashing.
-- **AI OCR Document Analyzer**: Auto-parses certificate PDFs and runs Error Level Analysis (ELA) for document forgery detection.
-- Credential Revocation Manager & Immutable Audit Ledger.
+- Immutable audit ledger anchored by Merkle trees and validator signatures.
 
-### 4. 💼 Company & Recruiter Background Verifier
+### 4. 🤖 AI Document OCR & Forgery Detection
+![TrustChain AI Document Analyzer OCR](docs/images/ai_ocr_analyzer.png)
+- Auto-parses legacy certificate PDFs and runs Error Level Analysis (ELA) for document forgery detection.
+- Extracted metadata fields automatically populated into institutional issue forms.
+
+### 5. 💼 Company & Recruiter Background Verifier
 - 5-Point Cryptographic Check: Exists, Authentic Issuer, Valid Signature, Active Revocation Status, Data Integrity.
 - GitHub Code Commit Evidence Inspector backing resume claims.
 
-### 5. 🌐 W3C Verifiable Credentials & DID Export
+### 6. 🌐 W3C Verifiable Credentials & DID Export
 - Full compatibility with **W3C JSON-LD Verifiable Credentials** standard and Decentralized Identifiers (`did:trustchain:TC-IN-2026-89421A`).
-
-### 6. 📄 AI Verified Resume Generator
-- 1-click printable PDF resume featuring an embedded TrustChain verification QR code and cryptographic proof footer.
 
 ---
 
