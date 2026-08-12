@@ -6,9 +6,12 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen.svg)](https://github.com/vijaymahes9080/TrustChain)
 [![Version](https://img.shields.io/badge/Version-v2.6%20MVP-cyan.svg)](https://github.com/vijaymahes9080/TrustChain)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-GitHub_Pages-success.svg)](https://vijaymahes9080.github.io/TrustChain/)
 [![Author](https://img.shields.io/badge/Author-Vijay%20Mahes-blue.svg)](https://github.com/vijaymahes9080)
 [![React](https://img.shields.io/badge/React-18-blue.svg)](https://reactjs.org/)
 [![Vite](https://img.shields.io/badge/Vite-5-purple.svg)](https://vitejs.dev/)
+
+🌐 **Live GitHub Pages URL**: [https://vijaymahes9080.github.io/TrustChain/](https://vijaymahes9080.github.io/TrustChain/)
 
 ---
 
