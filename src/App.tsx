@@ -12,6 +12,7 @@ import { ZkpSimulatorModal } from './components/ZkpSimulatorModal';
 import { BlockchainExplorerModal } from './components/BlockchainExplorerModal';
 import { W3cVcExportModal } from './components/W3cVcExportModal';
 import { DeveloperSdkModal } from './components/DeveloperSdkModal';
+import { VerifiedResumeGeneratorModal } from './components/VerifiedResumeGeneratorModal';
 import { ShieldCheck, Github } from 'lucide-react';
 
 export function App() {
@@ -38,6 +39,7 @@ export function App() {
   const [blockExplorerOpen, setBlockExplorerOpen] = useState(false);
   const [w3cModalOpen, setW3cModalOpen] = useState(false);
   const [sdkModalOpen, setSdkModalOpen] = useState(false);
+  const [resumeModalOpen, setResumeModalOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col selection:bg-cyan-500 selection:text-slate-950">
@@ -54,6 +56,7 @@ export function App() {
         openBlockExplorerModal={() => setBlockExplorerOpen(true)}
         openW3cModal={() => setW3cModalOpen(true)}
         openSdkModal={() => setSdkModalOpen(true)}
+        openResumeModal={() => setResumeModalOpen(true)}
         resetDemoData={resetToDefault}
       />
 
@@ -137,6 +140,13 @@ export function App() {
         isOpen={sdkModalOpen}
         onClose={() => setSdkModalOpen(false)}
         tcId={identity.tcId}
+      />
+
+      <VerifiedResumeGeneratorModal
+        isOpen={resumeModalOpen}
+        onClose={() => setResumeModalOpen(false)}
+        identity={identity}
+        credentials={credentials}
       />
 
       {/* Footer */}

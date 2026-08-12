@@ -14,6 +14,7 @@ import {
   Layers,
   FileCode,
   Terminal,
+  FileCheck,
   RotateCcw
 } from 'lucide-react';
 
@@ -28,6 +29,7 @@ interface NavbarProps {
   openBlockExplorerModal: () => void;
   openW3cModal: () => void;
   openSdkModal: () => void;
+  openResumeModal: () => void;
   resetDemoData: () => void;
 }
 
@@ -42,6 +44,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   openBlockExplorerModal,
   openW3cModal,
   openSdkModal,
+  openResumeModal,
   resetDemoData
 }) => {
   const roleOptions: { id: UserRole; label: string; icon: React.ReactNode; color: string }[] = [
@@ -80,7 +83,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
 
           {/* Quick Search */}
-          <div className="hidden lg:flex items-center flex-1 max-w-xs relative">
+          <div className="hidden xl:flex items-center flex-1 max-w-xs relative">
             <Search className="w-4 h-4 absolute left-3 text-slate-400" />
             <input
               type="text"
@@ -94,12 +97,21 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Innovative Action Tools */}
           <div className="flex items-center gap-1.5 flex-wrap">
             <button
+              onClick={openResumeModal}
+              className="flex items-center gap-1.5 px-2.5 py-1.5 bg-cyan-950/90 hover:bg-cyan-900 text-cyan-300 border border-cyan-700 rounded-lg text-xs font-bold transition shadow-sm"
+              title="Verified AI Resume"
+            >
+              <FileCheck className="w-3.5 h-3.5 text-cyan-400" />
+              <span className="hidden sm:inline">AI Resume</span>
+            </button>
+
+            <button
               onClick={openZkpModal}
               className="flex items-center gap-1.5 px-2.5 py-1.5 bg-cyan-950/70 hover:bg-cyan-900/90 text-cyan-300 border border-cyan-800 rounded-lg text-xs font-semibold transition"
               title="Zero-Knowledge Proof Studio"
             >
               <Lock className="w-3.5 h-3.5 text-cyan-400" />
-              <span className="hidden sm:inline">ZKP Studio</span>
+              <span className="hidden sm:inline">ZKP</span>
             </button>
 
             <button
@@ -108,25 +120,23 @@ export const Navbar: React.FC<NavbarProps> = ({
               title="Blockchain Ledger Explorer"
             >
               <Layers className="w-3.5 h-3.5 text-indigo-400" />
-              <span className="hidden sm:inline">Block Ledger</span>
+              <span className="hidden lg:inline">Block Ledger</span>
             </button>
 
             <button
               onClick={openW3cModal}
-              className="flex items-center gap-1.5 px-2.5 py-1.5 bg-blue-950/70 hover:bg-blue-900/90 text-blue-300 border border-blue-800 rounded-lg text-xs font-semibold transition"
+              className="p-1.5 bg-blue-950/70 hover:bg-blue-900/90 text-blue-300 border border-blue-800 rounded-lg text-xs font-semibold transition"
               title="W3C Verifiable Credentials JSON-LD"
             >
-              <FileCode className="w-3.5 h-3.5 text-blue-400" />
-              <span className="hidden md:inline">W3C VC</span>
+              <FileCode className="w-4 h-4 text-blue-400" />
             </button>
 
             <button
               onClick={openSdkModal}
-              className="flex items-center gap-1.5 px-2.5 py-1.5 bg-emerald-950/70 hover:bg-emerald-900/90 text-emerald-300 border border-emerald-800 rounded-lg text-xs font-semibold transition"
+              className="p-1.5 bg-emerald-950/70 hover:bg-emerald-900/90 text-emerald-300 border border-emerald-800 rounded-lg text-xs font-semibold transition"
               title="Developer SDK"
             >
-              <Terminal className="w-3.5 h-3.5 text-emerald-400" />
-              <span className="hidden md:inline">SDK</span>
+              <Terminal className="w-4 h-4 text-emerald-400" />
             </button>
 
             <button
