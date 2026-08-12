@@ -78,7 +78,7 @@ export interface AuditLog {
   timestamp: string;
   action: 'CREDENTIAL_ISSUED' | 'CREDENTIAL_VERIFIED' | 'CREDENTIAL_REVOKED' | 'PRIVACY_UPDATED' | 'OCR_ANALYZED';
   actorName: string;
-  actorRole: 'STUDENT' | 'UNIVERSITY' | 'COMPANY' | 'GOVERNMENT' | 'PUBLIC';
+  actorRole: 'STUDENT' | 'UNIVERSITY' | 'COMPANY' | 'GOVERNMENT' | 'PUBLIC' | 'PUBLIC_LINK';
   targetTcId: string;
   details: string;
   hash: string;
