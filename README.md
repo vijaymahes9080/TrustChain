@@ -7,12 +7,16 @@
 [![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen.svg)](https://github.com/vijaymahes9080/TrustChain)
 [![Version](https://img.shields.io/badge/Version-v2.6%20MVP-cyan.svg)](https://github.com/vijaymahes9080/TrustChain)
 [![Author](https://img.shields.io/badge/Author-Vijay%20Mahes-blue.svg)](https://github.com/vijaymahes9080)
+[![React](https://img.shields.io/badge/React-18-blue.svg)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-5-purple.svg)](https://vitejs.dev/)
 
 ---
 
-## 🚀 Core Concept & Architecture
+## 📖 Overview
 
-TrustChain creates a single, trusted digital identity (`TC-IN-2026-XXXXXXXX`) for students and professionals. Rather than repeatedly uploading PDFs and waiting for manual background checks, candidates share a **Universal Verification Link or QR Code**.
+**TrustChain** replaces repeated certificate uploads with a **single, trusted digital achievement identity**. Designed as a MCA final-year showcase project and startup-grade architecture, TrustChain allows students and professionals to connect verified education degrees, certificates, GitHub project evidence, and work experience to a single identity (`TC-IN-2026-XXXXXXXX`). 
+
+When applying for jobs, university programs, scholarships, or government schemes, candidates share a **Universal Verification Link or QR Code** for instant cryptographic proof.
 
 ```text
                         TRUSTCHAIN NETWORK
@@ -27,21 +31,21 @@ TrustChain creates a single, trusted digital identity (`TC-IN-2026-XXXXXXXX`) fo
 
 ---
 
-## ✨ Key Features & Innovations
+## ✨ Key Features & Innovation Highlights
 
-### 1. 👤 Student Digital Achievement Wallet
-- **Identity Badge**: Unique `TC-IN-2026-89421A` format with live QR code generator.
-- **Trust Score Engine**: Dynamic score (0-100) detailing point factors (+40 Inst, +20 Degree, +15 Certs, +15 GitHub Projects, +8 Skills, +2 Profile).
+### 1. 👤 Student Achievement Wallet
+- **Unique Digital Identity**: `TC-IN-2026-89421A` badge with QR code generator.
+- **Transparent Trust Score Engine**: Dynamic score (0–100) detailing exact point factors (+40 Inst, +20 Degree, +15 Certs, +15 GitHub Projects, +8 Skills, +2 Profile).
 - **Universal Verification Link**: Shareable route (`trustchain.app/u/TC-IN-2026-89421A`) accessible without login.
 - **Selective Disclosure Matrix**: Control granular visibility for GPA, phone, address, and repositories.
 
-### 2. 🔒 Zero-Knowledge Proof (ZKP) Studio
+### 2. 🔐 Zero-Knowledge Proof (ZKP) Studio
 - Powered by **zk-SNARK (Groth16 over BN128 curve)**.
-- Prove statements (e.g. *"I hold an authentic MCA degree with CGPA >= 8.0"*) without exposing actual transcript marks or personal data.
+- Prove statements (e.g., *"I hold an authentic MCA degree with CGPA >= 8.0"*) without exposing actual transcript marks or personal data.
 
 ### 3. 🏛️ University Credential Issuer & AI OCR
-- Cryptographic signing using ECDSA P-256 keys and SHA-256 payload hashing.
-- AI OCR Document Analyzer: Auto-parses certificate PDFs and runs Error Level Analysis (ELA) for document forgery detection.
+- Cryptographic signing using **ECDSA P-256 keys** and **SHA-256** payload hashing.
+- **AI OCR Document Analyzer**: Auto-parses certificate PDFs and runs Error Level Analysis (ELA) for document forgery detection.
 - Credential Revocation Manager & Immutable Audit Ledger.
 
 ### 4. 💼 Company & Recruiter Background Verifier
@@ -56,7 +60,7 @@ TrustChain creates a single, trusted digital identity (`TC-IN-2026-XXXXXXXX`) fo
 
 ---
 
-## 🛠️ Technology Stack
+## 🛠️ Technology Architecture & Stack
 
 | Layer | Technology |
 | --- | --- |
@@ -69,7 +73,7 @@ TrustChain creates a single, trusted digital identity (`TC-IN-2026-XXXXXXXX`) fo
 
 ---
 
-## ⚡ Quick Start
+## ⚡ Quick Start & Development
 
 ```bash
 # Clone the repository
@@ -88,7 +92,7 @@ npm run build
 
 ---
 
-## 🌐 Public Verification API Example
+## 🌐 Public Verification API Reference
 
 ```bash
 curl -X GET "https://api.trustchain.gov.in/v1/verify/TC-IN-2026-89421A" \
@@ -96,7 +100,7 @@ curl -X GET "https://api.trustchain.gov.in/v1/verify/TC-IN-2026-89421A" \
   -H "Accept: application/json"
 ```
 
-**JSON Response:**
+**Response:**
 ```json
 {
   "status": 200,
@@ -114,6 +118,12 @@ curl -X GET "https://api.trustchain.gov.in/v1/verify/TC-IN-2026-89421A" \
   }
 }
 ```
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
