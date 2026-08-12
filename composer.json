@@ -1,0 +1,13 @@
+{
+    "name": "vijaymahes/trustchain",
+    "description": "TrustChain — Universal Verification Platform for Digital Credentials and Identity",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vijay Mahes",
+            "email": "Vijaypradhap2004@gmail.com"
+        }
+    ],
+    "require": {}
+}
