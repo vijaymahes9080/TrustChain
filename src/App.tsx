@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTrustChain } from './store/useTrustChainStore';
 import { Navbar } from './components/Navbar';
 import { StudentApp } from './components/StudentApp';
@@ -8,7 +8,11 @@ import { GovernmentPortal } from './components/GovernmentPortal';
 import { PublicVerificationView } from './components/PublicVerificationView';
 import { QRScannerModal } from './components/QRScannerModal';
 import { AiOcrModal } from './components/AiOcrModal';
-import { ShieldCheck, Heart, Github, Lock } from 'lucide-react';
+import { ZkpSimulatorModal } from './components/ZkpSimulatorModal';
+import { BlockchainExplorerModal } from './components/BlockchainExplorerModal';
+import { W3cVcExportModal } from './components/W3cVcExportModal';
+import { DeveloperSdkModal } from './components/DeveloperSdkModal';
+import { ShieldCheck, Github } from 'lucide-react';
 
 export function App() {
   const {
@@ -30,6 +34,11 @@ export function App() {
     resetToDefault,
   } = useTrustChain();
 
+  const [zkpModalOpen, setZkpModalOpen] = useState(false);
+  const [blockExplorerOpen, setBlockExplorerOpen] = useState(false);
+  const [w3cModalOpen, setW3cModalOpen] = useState(false);
+  const [sdkModalOpen, setSdkModalOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col selection:bg-cyan-500 selection:text-slate-950">
       
@@ -41,6 +50,10 @@ export function App() {
         setSearchTcId={setSearchTcId}
         openQrModal={() => setQrModalOpen(true)}
         openAiModal={() => setAiModalOpen(true)}
+        openZkpModal={() => setZkpModalOpen(true)}
+        openBlockExplorerModal={() => setBlockExplorerOpen(true)}
+        openW3cModal={() => setW3cModalOpen(true)}
+        openSdkModal={() => setSdkModalOpen(true)}
         resetDemoData={resetToDefault}
       />
 
@@ -101,6 +114,31 @@ export function App() {
         onClose={() => setAiModalOpen(false)}
       />
 
+      <ZkpSimulatorModal
+        isOpen={zkpModalOpen}
+        onClose={() => setZkpModalOpen(false)}
+        identity={identity}
+        credentials={credentials}
+      />
+
+      <BlockchainExplorerModal
+        isOpen={blockExplorerOpen}
+        onClose={() => setBlockExplorerOpen(false)}
+      />
+
+      <W3cVcExportModal
+        isOpen={w3cModalOpen}
+        onClose={() => setW3cModalOpen(false)}
+        identity={identity}
+        credentials={credentials}
+      />
+
+      <DeveloperSdkModal
+        isOpen={sdkModalOpen}
+        onClose={() => setSdkModalOpen(false)}
+        tcId={identity.tcId}
+      />
+
       {/* Footer */}
       <footer className="bg-slate-900/80 border-t border-slate-800/80 py-8 px-4 mt-auto">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
@@ -111,7 +149,7 @@ export function App() {
           </div>
 
           <div className="flex items-center gap-4">
-            <span className="font-mono text-slate-400">SHA-256 & P-256 ECDSA Network Active</span>
+            <span className="font-mono text-slate-400">SHA-256 & P-256 ECDSA & zk-SNARK Network</span>
             <a 
               href="https://github.com/vijaymahes9080/TrustChain" 
               target="_blank" 

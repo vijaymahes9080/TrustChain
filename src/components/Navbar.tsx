@@ -7,10 +7,13 @@ import {
   Briefcase, 
   Landmark, 
   QrCode, 
-  FileSearch, 
   ExternalLink,
   Search,
   Sparkles,
+  Lock,
+  Layers,
+  FileCode,
+  Terminal,
   RotateCcw
 } from 'lucide-react';
 
@@ -21,6 +24,10 @@ interface NavbarProps {
   setSearchTcId: (id: string) => void;
   openQrModal: () => void;
   openAiModal: () => void;
+  openZkpModal: () => void;
+  openBlockExplorerModal: () => void;
+  openW3cModal: () => void;
+  openSdkModal: () => void;
   resetDemoData: () => void;
 }
 
@@ -31,6 +38,10 @@ export const Navbar: React.FC<NavbarProps> = ({
   setSearchTcId,
   openQrModal,
   openAiModal,
+  openZkpModal,
+  openBlockExplorerModal,
+  openW3cModal,
+  openSdkModal,
   resetDemoData
 }) => {
   const roleOptions: { id: UserRole; label: string; icon: React.ReactNode; color: string }[] = [
@@ -69,7 +80,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
 
           {/* Quick Search */}
-          <div className="hidden md:flex items-center flex-1 max-w-xs relative">
+          <div className="hidden lg:flex items-center flex-1 max-w-xs relative">
             <Search className="w-4 h-4 absolute left-3 text-slate-400" />
             <input
               type="text"
@@ -80,24 +91,58 @@ export const Navbar: React.FC<NavbarProps> = ({
             />
           </div>
 
-          {/* Quick Action Tools */}
-          <div className="flex items-center gap-2">
+          {/* Innovative Action Tools */}
+          <div className="flex items-center gap-1.5 flex-wrap">
+            <button
+              onClick={openZkpModal}
+              className="flex items-center gap-1.5 px-2.5 py-1.5 bg-cyan-950/70 hover:bg-cyan-900/90 text-cyan-300 border border-cyan-800 rounded-lg text-xs font-semibold transition"
+              title="Zero-Knowledge Proof Studio"
+            >
+              <Lock className="w-3.5 h-3.5 text-cyan-400" />
+              <span className="hidden sm:inline">ZKP Studio</span>
+            </button>
+
+            <button
+              onClick={openBlockExplorerModal}
+              className="flex items-center gap-1.5 px-2.5 py-1.5 bg-indigo-950/70 hover:bg-indigo-900/90 text-indigo-300 border border-indigo-800 rounded-lg text-xs font-semibold transition"
+              title="Blockchain Ledger Explorer"
+            >
+              <Layers className="w-3.5 h-3.5 text-indigo-400" />
+              <span className="hidden sm:inline">Block Ledger</span>
+            </button>
+
+            <button
+              onClick={openW3cModal}
+              className="flex items-center gap-1.5 px-2.5 py-1.5 bg-blue-950/70 hover:bg-blue-900/90 text-blue-300 border border-blue-800 rounded-lg text-xs font-semibold transition"
+              title="W3C Verifiable Credentials JSON-LD"
+            >
+              <FileCode className="w-3.5 h-3.5 text-blue-400" />
+              <span className="hidden md:inline">W3C VC</span>
+            </button>
+
+            <button
+              onClick={openSdkModal}
+              className="flex items-center gap-1.5 px-2.5 py-1.5 bg-emerald-950/70 hover:bg-emerald-900/90 text-emerald-300 border border-emerald-800 rounded-lg text-xs font-semibold transition"
+              title="Developer SDK"
+            >
+              <Terminal className="w-3.5 h-3.5 text-emerald-400" />
+              <span className="hidden md:inline">SDK</span>
+            </button>
+
             <button
               onClick={openQrModal}
-              className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg text-xs font-medium transition border border-slate-700 shadow-sm"
+              className="p-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg text-xs font-medium transition border border-slate-700"
               title="Scan QR Code"
             >
-              <QrCode className="w-3.5 h-3.5 text-cyan-400" />
-              <span className="hidden sm:inline">Scan QR</span>
+              <QrCode className="w-4 h-4 text-cyan-400" />
             </button>
 
             <button
               onClick={openAiModal}
-              className="flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-indigo-900/60 to-purple-900/60 hover:from-indigo-800/80 hover:to-purple-800/80 text-purple-200 border border-purple-700/50 rounded-lg text-xs font-medium transition shadow-sm"
+              className="p-1.5 bg-gradient-to-r from-indigo-900/60 to-purple-900/60 hover:from-indigo-800/80 hover:to-purple-800/80 text-purple-200 border border-purple-700/50 rounded-lg text-xs font-medium transition"
               title="AI Document Analyzer OCR"
             >
-              <Sparkles className="w-3.5 h-3.5 text-purple-400 animate-pulse" />
-              <span className="hidden sm:inline">AI OCR</span>
+              <Sparkles className="w-4 h-4 text-purple-400 animate-pulse" />
             </button>
 
             <button
