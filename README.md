@@ -1,0 +1,125 @@
+# TrustChain — Universal Verification Platform 🛡️
+
+> **"Verify once, use everywhere."**  
+> A portable digital achievement identity and cryptographic credential verification network replacing repeated certificate uploads.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen.svg)](https://github.com/vijaymahes9080/TrustChain)
+[![Version](https://img.shields.io/badge/Version-v2.6%20MVP-cyan.svg)](https://github.com/vijaymahes9080/TrustChain)
+[![Author](https://img.shields.io/badge/Author-Vijay%20Mahes-blue.svg)](https://github.com/vijaymahes9080)
+
+---
+
+## 🚀 Core Concept & Architecture
+
+TrustChain creates a single, trusted digital identity (`TC-IN-2026-XXXXXXXX`) for students and professionals. Rather than repeatedly uploading PDFs and waiting for manual background checks, candidates share a **Universal Verification Link or QR Code**.
+
+```text
+                        TRUSTCHAIN NETWORK
+                                │
+        ┌──────────────┬────────┴───────┬──────────────┐
+        ▼              ▼                ▼              ▼
+ ┌──────────────┐ ┌────────────┐ ┌────────────┐ ┌─────────────┐
+ │ Student App  │ │ University │ │  Company   │ │ Government  │
+ │  & Wallet    │ │   Portal   │ │ Background │ │ Qualification│
+ └──────────────┘ └────────────┘ └────────────┘ └─────────────┘
+```
+
+---
+
+## ✨ Key Features & Innovations
+
+### 1. 👤 Student Digital Achievement Wallet
+- **Identity Badge**: Unique `TC-IN-2026-89421A` format with live QR code generator.
+- **Trust Score Engine**: Dynamic score (0-100) detailing point factors (+40 Inst, +20 Degree, +15 Certs, +15 GitHub Projects, +8 Skills, +2 Profile).
+- **Universal Verification Link**: Shareable route (`trustchain.app/u/TC-IN-2026-89421A`) accessible without login.
+- **Selective Disclosure Matrix**: Control granular visibility for GPA, phone, address, and repositories.
+
+### 2. 🔒 Zero-Knowledge Proof (ZKP) Studio
+- Powered by **zk-SNARK (Groth16 over BN128 curve)**.
+- Prove statements (e.g. *"I hold an authentic MCA degree with CGPA >= 8.0"*) without exposing actual transcript marks or personal data.
+
+### 3. 🏛️ University Credential Issuer & AI OCR
+- Cryptographic signing using ECDSA P-256 keys and SHA-256 payload hashing.
+- AI OCR Document Analyzer: Auto-parses certificate PDFs and runs Error Level Analysis (ELA) for document forgery detection.
+- Credential Revocation Manager & Immutable Audit Ledger.
+
+### 4. 💼 Company & Recruiter Background Verifier
+- 5-Point Cryptographic Check: Exists, Authentic Issuer, Valid Signature, Active Revocation Status, Data Integrity.
+- GitHub Code Commit Evidence Inspector backing resume claims.
+
+### 5. 🌐 W3C Verifiable Credentials & DID Export
+- Full compatibility with **W3C JSON-LD Verifiable Credentials** standard and Decentralized Identifiers (`did:trustchain:TC-IN-2026-89421A`).
+
+### 6. 📄 AI Verified Resume Generator
+- 1-click printable PDF resume featuring an embedded TrustChain verification QR code and cryptographic proof footer.
+
+---
+
+## 🛠️ Technology Stack
+
+| Layer | Technology |
+| --- | --- |
+| **Frontend Framework** | React 18 + TypeScript + Vite |
+| **Styling & UI** | Tailwind CSS + Lucide Icons |
+| **Cryptographic Engine** | Web Crypto API (SHA-256 & ECDSA P-256) |
+| **Zero-Knowledge Proofs** | zk-SNARK Groth16 Simulator |
+| **AI Document Analyzer** | OCR Field Extractor & ELA Anomaly Detector |
+| **Standards** | W3C Verifiable Credentials JSON-LD & DID |
+
+---
+
+## ⚡ Quick Start
+
+```bash
+# Clone the repository
+git clone https://github.com/vijaymahes9080/TrustChain.git
+cd TrustChain
+
+# Install dependencies
+npm install
+
+# Launch development server
+npm run dev
+
+# Build for production
+npm run build
+```
+
+---
+
+## 🌐 Public Verification API Example
+
+```bash
+curl -X GET "https://api.trustchain.gov.in/v1/verify/TC-IN-2026-89421A" \
+  -H "Authorization: Bearer tc_live_key" \
+  -H "Accept: application/json"
+```
+
+**JSON Response:**
+```json
+{
+  "status": 200,
+  "verification": {
+    "tc_id": "TC-IN-2026-89421A",
+    "student_name": "Vijay Mahes",
+    "university": "Gandhigram Rural Institute",
+    "trust_score": 94,
+    "qualification": "Master of Computer Applications (MCA)",
+    "degree_credential": {
+      "status": "ACTIVE",
+      "digital_signature": "SIG_P256_v1:8f9a12b4e5c6d7a8b9c0d1e2f3a4b5c6.1786523910.INST_GRI_001",
+      "grade": "9.4 CGPA (First Class Distinction)"
+    }
+  }
+}
+```
+
+---
+
+## 👨‍💻 Developer & Author
+
+- **Developer**: Vijay Mahes
+- **Email**: Vijaypradhap2004@gmail.com
+- **Repository**: [https://github.com/vijaymahes9080/TrustChain](https://github.com/vijaymahes9080/TrustChain)
+- **Institution**: Gandhigram Rural Institute (Deemed University)
